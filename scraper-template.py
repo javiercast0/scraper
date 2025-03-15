@@ -1,16 +1,6 @@
-from flask import Flask, jsonify
 from playwright.sync_api import sync_playwright
 import time
 from plyer import notification
-
-app = Flask(__name__)
-
-@app.route('/')
-def hello_world():
-    return jsonify(message="¡Hola, mundo!")
-
-if __name__ == '__main__':
-    app.run(debug=True)
 
 def scraping(browser, url, priceNotif, priceMet, seen_items):
     print("Creating a new tab...")
