@@ -49,11 +49,6 @@ def scraping(browser, url, priceNotif, priceMet, seen_items):
                     price_value = float(price.replace('€', '').replace(',', '.'))
                     if price_value <= priceNotif:
                         priceMet.append(item)
-                        notification.notify(
-                            title="CHECK!!",
-                            message=f"{name}: {price} - \n {urlItem}",
-                            timeout=3
-                        )
                 except ValueError as e:
                     print(f"Error converting price: {e}")
     
